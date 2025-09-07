@@ -43,6 +43,11 @@ async function searchImage(){
         const image = document.createElement("img");
         image.src = result.urls.small;
         image.alt = result.alt_description || keyword;
+
+        image.addEventListener("click", () => {
+          window.open(result.urls.full, "_blank");
+        });
+        
         searchResults.append(image);
     });
     showMorebtn.style.display="block";
